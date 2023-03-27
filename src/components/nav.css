@@ -1,0 +1,31 @@
+.nav {
+  display: flex;
+  gap: 20px;
+  justify-content: space-around;
+  background-color: #120f31;
+  align-items: center;
+}
+
+.logo {
+  width: 288px;
+  height: 50px;
+}
+
+.ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}

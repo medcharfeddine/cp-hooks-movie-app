@@ -1,38 +1,73 @@
+/* @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap");
+
+:root {
+  --primary-color: #5a4af4;
+  --secondary-color: #1ea5fc;
+  --tertary-color: #b66dff;
+  --success-color: #05ce91;
+  --error-color: #ff6161;
+  --warning-color: #ffad49;
+}
+
 .App {
   text-align: center;
+  width: 100%;
+  background-color: #120f31;
+}
+.back {
+  background-image: url(./images/Background.png);
+} */
+
+.app {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.filter {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: space-between;
+  margin-bottom: 20px;
 }
 
-.App-link {
-  color: #61dafb;
+.movie-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.movie-card {
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 300px;
+}
+
+.movie-card img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.movie-info {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.rating {
+  background-color: #f44336;
+  color: #fff;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.movie-overview {
+  margin-top: 20px;
+}
+
+.movie-overview h4 {
+  margin-bottom: 10px;
 }

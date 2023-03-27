@@ -1,0 +1,65 @@
+.h-2 {
+  display: flex;
+  padding-left: 200px;
+}
+
+h2 {
+  text-align: left;
+  height: 56px;
+  padding: 0 20px 0 0;
+  /* Heading/H2 */
+
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 48px;
+  line-height: 56px;
+  /* identical to box height, or 117% */
+
+  letter-spacing: -0.02em;
+
+  /* Grey/50 */
+
+  color: #ebeef5;
+}
+
+.carts {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 24px;
+  margin: 0 200px;
+  height: 250px;
+}
+
+.cart {
+  display: flex;
+  justify-content: center;
+  padding: 40px 16px;
+  width: 282px;
+  height: 152px;
+  background: #121829;
+  /* opacity: 0.8; */
+  border-radius: 12px;
+  flex: none;
+  order: 0;
+  flex-grow: 1;
+  flex-direction: column;
+}
+
+.cart h3,
+p {
+  color: #ebeef5;
+}
+
+.h-3 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.h--3 {
+  font-size: 20px;
+  font-weight: 700;
+}
