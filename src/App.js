@@ -12,7 +12,7 @@ const App = () => {
         "Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.",
       posterURL:
         "https://www.themoviedb.org/t/p/w300_and_h450_bestv2/hBcY0fE9pfXzvVaY4GKarweriG2.jpg",
-      rating: 6.3,
+      rating: 5,
     },
     {
       title: "The Godfather",
@@ -20,7 +20,7 @@ const App = () => {
         "The aging patriarch of an organized crime dynasty transfers control of his clandestine empire to his reluctant son.",
       posterURL:
         "https://www.themoviedb.org/t/p/w220_and_h330_face/rPdtLWNsZmAtoZl9PK7S2wE3qiS.jpg",
-      rating: 7.2,
+      rating: 4,
     },
     {
       title: "The Dark Knight",
@@ -28,7 +28,7 @@ const App = () => {
         "When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, Batman must accept one of the greatest psychological and physical tests of his ability to fight injustice.",
       posterURL:
         "https://www.themoviedb.org/t/p/w220_and_h330_face/qJ2tW6WMUDux911r6m7haRef0WH.jpg",
-      rating: 8,
+      rating: 3,
     },
     {
       title: "The Godfather: Part II",
@@ -36,7 +36,7 @@ const App = () => {
         "The early life and career of Vito Corleone in 1920s New York City is portrayed, while his son, Michael, expands and tightens his grip on the family crime syndicate.",
       posterURL:
         "https://www.themoviedb.org/t/p/w300_and_h450_bestv2/hek3koDUyRQk7FIhPXsa6mT2Zc3.jpg",
-      rating: 9,
+      rating: 2,
     },
   ]);
 

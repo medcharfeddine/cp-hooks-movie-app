@@ -6,7 +6,7 @@ const MovieCard = ({ movie }) => {
       <img src={movie.posterURL} alt={movie.title} />
       <div className="movie-info">
         <h3>{movie.title}</h3>
-        <span className="rating">{movie.rating}/10</span>
+        <span className="rating">{movie.rating}/5</span>
       </div>
       <div className="movie-overview">
         <h4>Overview:</h4>
