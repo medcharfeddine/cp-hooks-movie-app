@@ -4,6 +4,7 @@ import Filter from "./components/Filter";
 import AddMovie from "./components/AddMovie";
 import "./App.css";
 
+
 const App = () => {
   const [movies, setMovies] = useState([
     {
