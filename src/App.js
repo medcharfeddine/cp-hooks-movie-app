@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import MovieList from "./components/MovieList";
 import Filter from "./components/Filter";
+import AddMovie from "./components/AddMovie";
 import "./App.css";
 
 const App = () => {
@@ -39,6 +40,10 @@ const App = () => {
     },
   ]);
 
+  const AddM = (x) => {
+    setMovies([...movies, x]);
+  };
+
   const [titleFilter, setTitleFilter] = useState("");
   const [ratingFilter, setRatingFilter] = useState("");
 
@@ -50,17 +55,17 @@ const App = () => {
     setRatingFilter(e.target.value);
   };
 
-  const addMovie = () => {
-    const newMovie = {
-      title: "Interstellar",
-      description:
-        "A team of explorers travel through a wormhole in space in an attempt to ensure humanitys survival.",
-      posterURL:
-        "https://www.themoviedb.org/t/p/w300_and_h450_bestv2/gEU2QniE6E77NI6lCU6MxlNBvIx.jpg",
-      rating: 8.6,
-    };
-    setMovies([...movies, newMovie]);
-  };
+  // const addMovie = () => {
+  //   const newMovie = {
+  //     title: "Interstellar",
+  //     description:
+  //       "A team of explorers travel through a wormhole in space in an attempt to ensure humanitys survival.",
+  //     posterURL:
+  //       "https://www.themoviedb.org/t/p/w300_and_h450_bestv2/gEU2QniE6E77NI6lCU6MxlNBvIx.jpg",
+  //     rating: 8.6,
+  //   };
+  //   setMovies([...movies, newMovie]);
+  // };
   const filteredMovies = movies.filter(
     (movie) =>
       movie.title.toLowerCase().includes(titleFilter.toLowerCase()) &&
@@ -75,7 +80,8 @@ const App = () => {
         handleRatingChange={handleRatingChange}
       />
       <MovieList movies={filteredMovies} />
-      <button onClick={addMovie}>Add Movie</button>
+      <AddMovie addMovie={AddM} />
+      {/* <button onClick={addMovie}>Add Movie</button> */}
     </div>
   );
 };
