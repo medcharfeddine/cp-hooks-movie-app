@@ -1,0 +1,61 @@
+.Add {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.form {
+  width: 500px;
+  height: 500px;
+  justify-content: space-evenly;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  background: rgba(9, 8, 17, 0.42);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(4.3px);
+  -webkit-backdrop-filter: blur(4.3px);
+}
+
+h1,
+label {
+  font-family: "Poppins";
+  font-weight: 600;
+  color: #fff;
+}
+
+input {
+  width: 80%;
+  height: 7%;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.btns {
+  display: flex;
+  gap: 20px;
+}
+
+.btn {
+  width: 150px;
+  height: 50px;
+  border-radius: 12px;
+  font-family: "Poppins";
+  font-weight: 600;
+}
+
+.cfm {
+  background-color: var(--secondary-color);
+}
+
+.cnl {
+  background-color: var(--error-color);
+}
+
+.btn:hover {
+  cursor: pointer;
+}

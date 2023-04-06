@@ -1,0 +1,63 @@
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  overflow: hidden;
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+
+.logo {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+}
+
+ul {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 2rem;
+  align-items: center;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-align: center;
+  text-decoration: none;
+}
+
+.text {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  /* identical to box height, or 150% */
+
+  letter-spacing: 0.02em;
+
+  /* Grey/200 */
+
+  color: #a8aebf;
+}
+
+.search {
+  display: flex;
+  gap: 25px;
+}
+
+.inp {
+  width: 250px;
+  height: 35px;
+  border-radius: 20px;
+  padding: 0 35px;
+  background-image: url(../../image/vuesax/linear/vuesax/linear/search-normal.png);
+  background-size: 9%;
+  background-repeat: no-repeat;
+  background-position: right;
+  background-position-x: left;
+}

@@ -1,0 +1,31 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  padding: 20px;
+  background: rgba(32, 40, 62, 0.8);
+  backdrop-filter: blur(40px);
+  width: 282px;
+  height: 520px;
+  border-radius: 12px;
+}
+.card img {
+  border-radius: 12px;
+  width: 300px;
+  height: 450px;
+}
+
+h3 {
+  color: #fff;
+  font-size: 0.8rem;
+}
+
+p {
+  font-size: 0.8rem;
+  color: var(--primary-color);
+  font-family: "poppins";
+  font-weight: 700;
+  padding: 5px;
+}
