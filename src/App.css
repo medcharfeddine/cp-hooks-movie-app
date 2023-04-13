@@ -31,19 +31,4 @@
   background-image: url(./image/Background.png);
 }
 
-.movielist {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 20px;
-}
 
-.card {
-  padding: 20px;
-  background: rgba(32, 40, 62, 0.8);
-  backdrop-filter: blur(40px);
-  width: 282px;
-  height: 520px;
-  border-radius: 12px;
-}

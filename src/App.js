@@ -6,6 +6,7 @@ import MovieList from "./components/MovieList/MovieList";
 import { moviesData } from "./data";
 import Dashboard from "./components/Dashboard/Dashboard";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import MovieDesc from "./components/Movie Desc/MovieDesc";
 
 
 const App = () => {
@@ -43,6 +44,7 @@ const App = () => {
             }
           />
           <Route path="Add" element={<Add add={handleAdd} />} />
+          <Route path="/:movieId" element={<MovieDesc movies={movies} />} />
         </Routes>
       </BrowserRouter>
     </div>
