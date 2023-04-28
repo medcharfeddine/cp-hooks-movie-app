@@ -31,4 +31,7 @@
   background-image: url(./image/Background.png);
 }
 
-
+.video {
+  width: 1200px;
+  height: 600px;
+}

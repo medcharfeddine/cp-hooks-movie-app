@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./App.css";
 import Add from "./components/Add/Add";
 import Nav from "./components/Navbar/Nav";
@@ -7,15 +7,35 @@ import { moviesData } from "./data";
 import Dashboard from "./components/Dashboard/Dashboard";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import MovieDesc from "./components/Movie Desc/MovieDesc";
-
+import axios from "axios";
 
 const App = () => {
-  const [movies, setMovies] = useState(moviesData);
+  const [movies, setMovies] = useState([]);
   const [text, setText] = useState("");
   const [rating, setRating] = useState(1);
   const handleAdd = (newMovie) => {
     setMovies([...movies, newMovie]);
   };
+
+  const moviedata = () => {
+    axios
+      .get(
+        "https://api.themoviedb.org/3/movie/popular?api_key=a7286d592a026a75e47beca432e3552e&language=en-US&page=1"
+      )
+      .then(function (response) {
+        // handle success
+        console.log(response.data.results);
+        setMovies(response.data.results);
+      })
+      .catch(function (error) {
+        // handle error
+        console.log(error);
+      });
+  };
+
+  useEffect(() => {
+    moviedata();
+  }, []);
 
   const handleText = (e) => setText(e.target.value);
   const handleRating = (x) => setRating(x);
@@ -31,20 +51,10 @@ const App = () => {
         />
         <Routes>
           <Route index element={<Dashboard ln={movies.length} />} />
-          <Route
-            path="Movies"
-            element={
-              <MovieList
-                movies={movies.filter(
-                  (el) =>
-                    el.title.toLowerCase().includes(text.toLowerCase()) &&
-                    el.rating >= rating
-                )}
-              />
-            }
-          />
+          <Route path="Movies" element={<MovieList movies={movies} />} />
           <Route path="Add" element={<Add add={handleAdd} />} />
-          <Route path="/:movieId" element={<MovieDesc movies={movies} />} />
+          <Route path="/:id" element={<MovieDesc movies={movies} />} />
+          <Route path="/Movies" element={<Add />} />
         </Routes>
       </BrowserRouter>
     </div>

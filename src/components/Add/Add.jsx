@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import StarRating from "../Filter/StarRating";
 import "./add.css";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Add = ({ add }) => {
   const [title, setTitle] = useState("");
@@ -10,6 +10,8 @@ const Add = ({ add }) => {
   const [rating, setRating] = useState(1);
   const [description, setDescription] = useState("");
   const [trailer, setTrailer] = useState("");
+
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -23,6 +25,7 @@ const Add = ({ add }) => {
       trailer,
     };
     add(newMovie);
+    navigate("/Movies");
   };
   const handleRating = (x) => {
     setRating(x);
@@ -33,6 +36,7 @@ const Add = ({ add }) => {
   return (
     <div className="Add">
       <h1>Add A Movie</h1>
+
       <form className="form" onSubmit={handleSubmit}>
         <label>Movie Title</label>
         <input

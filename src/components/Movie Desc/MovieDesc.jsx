@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import "./moviedesc.css";
 import StarRating from "../Filter/StarRating";
 import Modal from "react-modal";
+import axios from "axios";
 
 const customStyles = {
   content: {
@@ -19,8 +20,29 @@ Modal.setAppElement("#root");
 
 const MovieDesc = ({ movies }) => {
   const [modalIsOpen, setIsOpen] = React.useState(false);
-  let { movieId } = useParams();
-  console.log(typeof movieId);
+  const [videos, setVideos] = useState([]);
+  let params = useParams();
+  // console.log(typeof movieId);
+  let mov = movies.find((movie) => movie.id == params.id);
+  console.log(mov.title);
+
+  const yr = mov.release_date.slice(0, 4);
+
+  axios
+    .get(
+      `https://api.themoviedb.org/3/movie/${mov.id}/videos?api_key=a7286d592a026a75e47beca432e3552e`
+    )
+    .then(function (res) {
+      let vidId = res.data.results.slice(-1);
+      // handle success
+      console.log(res.data.results);
+      setVideos(vidId[0].key);
+    })
+    .catch(function (err) {
+      // handle error
+      console.log(err);
+    });
+
   function openModal() {
     setIsOpen(true);
   }
@@ -29,8 +51,8 @@ const MovieDesc = ({ movies }) => {
     setIsOpen(false);
   }
 
-  let mov = movies.find((movie) => movie.title == movieId);
-  console.log(mov);
+  // let video = `https://api.themoviedb.org/3/movie/${mov.id}/videos?api_key=a7286d592a026a75e47beca432e3552e`;
+  // console.log(video);
   return (
     <div className="main">
       <Link to="/">
@@ -41,7 +63,10 @@ const MovieDesc = ({ movies }) => {
       </Link>
       <div className="desc">
         <div className="image">
-          <img src={mov.image} alt={mov.title} />
+          <img
+            src={`http://image.tmdb.org/t/p/w300/` + mov.poster_path}
+            alt={mov.title}
+          />
         </div>
         <div className="movie-desc">
           <h2>{mov.title}</h2>
@@ -52,11 +77,11 @@ const MovieDesc = ({ movies }) => {
           </p>
           <h5>
             <strong>Release Year</strong> <br /> <br />
-            {mov.year}
+            {yr}
           </h5>
           <div className="rating">
             <h3>Movie Rating :</h3>
-            <StarRating rating={mov.rating} />
+            <p> {mov.vote_average} </p>
           </div>
           <button onClick={openModal}>Watch Trailer</button>
           <Modal
@@ -66,15 +91,16 @@ const MovieDesc = ({ movies }) => {
             style={customStyles}
           >
             <h2> {mov.title} Trailer </h2>
+            {/* <video src={`https://www.youtube.com/watch?v=${videos}`} /> */}
             <iframe
               width="1200"
               height="580"
-              src={mov.trailer}
+              src={`https://www.youtube.com/embed/${videos}`}
               title="Movie Trailer"
               frameborder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               allowFullScreen
-            ></iframe>{" "}
+            ></iframe>
             <br />
             <button onClick={closeModal}>Go Back</button>
           </Modal>

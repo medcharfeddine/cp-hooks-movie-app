@@ -4,14 +4,17 @@ import "./movieCard.css";
 import { Link } from "react-router-dom";
 
 const MovieCard = ({ movie }) => {
-  const yr = movie.year.slice(0, 4);
-  // console.log(yr);
+  const yr = movie.release_date.slice(0, 4);
+  console.log(yr);
 
   return (
-    <Link to={`/${movie.title}`}>
+    <Link to={`/${movie.id}`}>
       <div className="card">
-        <img src={movie.image} alt={movie.title} />
-        <StarRating rating={movie.rating} />
+        <img
+          src={`http://image.tmdb.org/t/p/w500/` + movie.poster_path}
+          alt={movie.title}
+        />
+        <p> Rating: {movie.vote_average} </p>
         <h3> {movie.title} </h3>
         <p> {yr} </p>
       </div>
