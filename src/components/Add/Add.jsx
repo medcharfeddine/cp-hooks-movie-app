@@ -38,6 +38,8 @@ const Add = ({ add }) => {
       <h1>Add A Movie</h1>
 
       <form className="form" onSubmit={handleSubmit}>
+        <label>TMDB ID</label>
+        <input type="number" required />
         <label>Movie Title</label>
         <input
           placeholder="Harry Potter"

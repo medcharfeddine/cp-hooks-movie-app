@@ -3,7 +3,6 @@ import "./App.css";
 import Add from "./components/Add/Add";
 import Nav from "./components/Navbar/Nav";
 import MovieList from "./components/MovieList/MovieList";
-import { moviesData } from "./data";
 import Dashboard from "./components/Dashboard/Dashboard";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import MovieDesc from "./components/Movie Desc/MovieDesc";
@@ -24,7 +23,7 @@ const App = () => {
       )
       .then(function (response) {
         // handle success
-        console.log(response.data.results);
+        // console.log(response.data.results);
         setMovies(response.data.results);
       })
       .catch(function (error) {

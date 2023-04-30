@@ -17,13 +17,14 @@
 .App {
   text-align: center;
   width: 100%;
-  height: 100%;
+  height: auto;
   background-color: #120f31;
+  padding: 20px 0 20px 0;
 }
 
-.App::-webkit-scrollbar {
+/* .App::-webkit-scrollbar {
   display: none;
-}
+} */
 
 .back {
   background-repeat: no-repeat;
@@ -34,4 +35,23 @@
 .video {
   width: 1200px;
   height: 600px;
+}
+
+.list2 {
+  display: flex;
+  width: 80vw;
+  gap: 20px;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+}
+
+.list2::-webkit-scrollbar {
+  display: none;
+}
+
+.l1 {
+  padding: 20px;
 }
