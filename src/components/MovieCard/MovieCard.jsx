@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 const MovieCard = ({ movie }) => {
   const yr = movie.release_date.slice(0, 4);
-  console.log(yr);
+  // console.log(yr);
 
   return (
     <Link to={`/${movie.id}`}>

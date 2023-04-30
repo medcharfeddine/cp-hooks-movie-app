@@ -15,6 +15,7 @@ const App = () => {
   const handleAdd = (newMovie) => {
     setMovies([...movies, newMovie]);
   };
+  console.log(movies);
 
   const moviedata = () => {
     axios

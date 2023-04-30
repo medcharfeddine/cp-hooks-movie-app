@@ -24,7 +24,7 @@ const MovieDesc = ({ movies }) => {
   let params = useParams();
   // console.log(typeof movieId);
   let mov = movies.find((movie) => movie.id == params.id);
-  console.log(mov.title);
+  // console.log(mov.title);
 
   const yr = mov.release_date.slice(0, 4);
 
@@ -35,7 +35,7 @@ const MovieDesc = ({ movies }) => {
     .then(function (res) {
       let vidId = res.data.results.slice(-1);
       // handle success
-      console.log(res.data.results);
+      // console.log(res.data.results);
       setVideos(vidId[0].key);
     })
     .catch(function (err) {
