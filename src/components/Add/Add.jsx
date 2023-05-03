@@ -38,7 +38,7 @@ const Add = ({ add }) => {
       setDescription(info.data.overview);
       setImage(`http://images.tmdb.org/t/p/w500${info.data.poster_path}`);
       setYear(info.data.release_date);
-      setRating(info.data.vote_average);
+      setRating(info.data.vote_average.toFixed(1));
     } catch (error) {
       console.log(error);
     }
