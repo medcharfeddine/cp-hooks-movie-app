@@ -68,7 +68,7 @@ const Add = ({ add }) => {
     };
     add(newMovie);
     addMovie();
-    // getYoutubeVideo();
+    getYoutubeVideo();
     // navigate("/Movies");
   };
 
