@@ -15,22 +15,16 @@ const App = () => {
   const handleAdd = (newMovie) => {
     setMovies([...movies, newMovie]);
   };
-  console.log(movies);
+  // console.log(movies);
 
-  const moviedata = () => {
-    axios
-      .get(
-        "https://api.themoviedb.org/3/movie/popular?api_key=a7286d592a026a75e47beca432e3552e&language=en-US&page=1"
-      )
-      .then(function (response) {
-        // handle success
-        // console.log(response.data.results);
-        setMovies(response.data.results);
-      })
-      .catch(function (error) {
-        // handle error
-        console.log(error);
-      });
+  const moviedata = async () => {
+    const res = await axios.get(
+      "https://api.themoviedb.org/3/movie/popular?api_key=a7286d592a026a75e47beca432e3552e&language=en-US&page=1"
+    );
+    try {
+      console.log(res.data.results);
+      setMovies(res.data.results);
+    } catch (error) {}
   };
 
   useEffect(() => {

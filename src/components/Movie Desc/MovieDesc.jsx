@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import "./moviedesc.css";
-import StarRating from "../Filter/StarRating";
+import StarRating from "../Filter/StarRating.jsx";
 import Modal from "react-modal";
 import axios from "axios";
 

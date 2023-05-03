@@ -55,3 +55,7 @@
 .l1 {
   padding: 20px;
 }
+
+.vote {
+  color: var(--success-color);
+}

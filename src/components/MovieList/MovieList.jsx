@@ -35,7 +35,7 @@ const MovieList = ({ movies }) => {
         </button>
 
         {movies.map((el) => (
-          <MovieCard key={movies.id} className="moviecard" movie={el} />
+          <MovieCard key={el.id} className="moviecard" movie={el} />
         ))}
       </div>
       <label className="l1">Now Playing Movies</label>

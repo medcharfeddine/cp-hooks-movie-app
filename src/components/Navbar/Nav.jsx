@@ -1,7 +1,7 @@
 import React from "react";
 import Logo from "../../image/icon.png";
 import "./nav.css";
-import StarRating from "../Filter/StarRating";
+import StarRating from "../Filter/StarRating.jsx";
 import { Link, Outlet } from "react-router-dom";
 // import Search from "../../image/vuesax/linear/vuesax/linear/search-normal.png";
 

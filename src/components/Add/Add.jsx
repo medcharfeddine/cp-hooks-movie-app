@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import StarRating from "../Filter/StarRating";
+import StarRating from "../Filter/StarRating.jsx";
 import "./add.css";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
@@ -8,7 +8,7 @@ const Add = ({ add }) => {
   const [title, setTitle] = useState("");
   const [image, setImage] = useState("");
   const [year, setYear] = useState("");
-  const [rating, setRating] = useState(1);
+  const [rating, setRating] = useState("");
   const [description, setDescription] = useState("");
   const [trailer, setTrailer] = useState("");
   const [movieId, setMovieId] = useState("");
@@ -16,31 +16,65 @@ const Add = ({ add }) => {
   const navigate = useNavigate();
 
   const apiKey = "a7286d592a026a75e47beca432e3552e";
-  console.log(apiKey);
+  // console.log(apiKey);
+
+  const newMovie = {
+    title,
+    image,
+    year,
+    rating,
+    description,
+    trailer,
+  };
+
+  // console.log(youtubeId.results.key);
+
+  const addMovie = async () => {
+    const info = await axios.get(
+      `https://api.themoviedb.org/3/movie/${movieId}?api_key=${apiKey}`
+    );
+    try {
+      setTitle(info.data.title);
+      setDescription(info.data.overview);
+      setImage(`http://images.tmdb.org/t/p/w500${info.data.poster_path}`);
+      setYear(info.data.release_date);
+      setRating(info.data.vote_average);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const getYoutubeVideo = async () => {
+    const video = await axios.get(
+      `https://api.themoviedb.org/3/movie/${movieId}/videos?api_key=${apiKey}`
+    );
+    try {
+      console.log(video.data.results[0].key);
+      setTrailer(video.data.results[0].key);
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    const newMovie = {
+      title,
+      image,
+      year,
+      rating,
+      description,
+      trailer,
+    };
+    add(newMovie);
     addMovie();
+    // getYoutubeVideo();
     // navigate("/Movies");
   };
-  const addMovie = () => {
-    axios
-      .get(`https://api.themoviedb.org/3/movie/${movieId}?api_key=${apiKey}`)
-      .then(function (res) {
-        console.log(res);
-        setTitle(res.data.title);
-        setDescription(res.data.overview);
-        setImage(`http://images.tmdb.org/t/p/w500${res.data.poster_path}`);
-        setYear(res.data.release_date);
-      })
-      .catch(function (err) {
-        console.log(err);
-      });
-  };
 
-  const handleRating = (x) => {
-    setRating(x);
-  };
+  // const handleRating = (x) => {
+  //   setRating(x);
+  // };
 
   // const check = title && image && year && rating && description && trailer;
 
@@ -88,13 +122,18 @@ const Add = ({ add }) => {
         />
         <label>Movie Trailer Link</label>
         <input
-          type="url"
+          type="text"
           value={trailer}
           onChange={(e) => setTrailer(e.target.value)}
           // required
         />
         <label>Movie Rating</label>
-        <StarRating handleRating={handleRating} rating={rating} />
+        <input
+          type="text"
+          value={rating}
+          onChange={(e) => setRating(e.target.value)}
+        />
+        {/* <StarRating handleRating={handleRating} rating={rating} /> */}
         <div className="btns">
           <button className="btn cfm" type="submit">
             Confirm

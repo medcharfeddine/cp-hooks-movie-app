@@ -28,7 +28,7 @@ const Latest = () => {
       )
       .then(function (response) {
         // handle success
-        console.log(response.data.results);
+        // console.log(response.data.results);
         setLatest(response.data.results);
       })
       .catch(function (error) {
@@ -50,7 +50,7 @@ const Latest = () => {
         <img src={arrow} alt="" />
       </button>
       {latest.map((el) => (
-        <MovieCard key={latest.id} className="moviecard" movie={el} />
+        <MovieCard key={el.id} className="moviecard" movie={el} />
       ))}
     </div>
   );
