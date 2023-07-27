@@ -67,3 +67,9 @@
 .nxt-btn:hover img {
   opacity: 1;
 }
+
+.l1 {
+  font-family: 'poppins';
+  font-size: x-large;
+  font-weight: 700;
+}

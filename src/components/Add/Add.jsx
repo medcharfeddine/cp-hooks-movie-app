@@ -135,7 +135,7 @@ const Add = ({ add }) => {
         />
         {/* <StarRating handleRating={handleRating} rating={rating} /> */}
         <div className="btns">
-          <button className="btn cfm" type="submit">
+          <button className="btn cfm" type="submit" disabled>
             Confirm
           </button>
 

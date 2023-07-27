@@ -1,5 +1,4 @@
 import React from "react";
-import StarRating from "../Filter/StarRating.jsx";
 import "./movieCard.css";
 import { Link } from "react-router-dom";
 
@@ -14,11 +13,13 @@ const MovieCard = ({ movie }) => {
           src={`http://image.tmdb.org/t/p/w500/` + movie.poster_path}
           alt={movie.title}
         />
-        <p>
-          Rating: <span className="vote">{movie.vote_average}</span>
-        </p>
-        <h3> {movie.title} </h3>
-        <p> {movie.release_date} </p>
+        <div className="movie-info">
+          <p>
+            Rating: <span className="vote">{movie.vote_average}</span>
+          </p>
+          <h3> {movie.title} </h3>
+          <p> {movie.release_date} </p>
+        </div>
       </div>
     </Link>
   );
