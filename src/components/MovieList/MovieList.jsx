@@ -6,6 +6,24 @@ import Latest from "./Latest";
 
 const MovieList = ({ movies }) => {
   // console.log(movies);
+  // const productContainers = [...document.querySelectorAll(".list")];
+  // const nxtBtn = [...document.querySelectorAll(".nxt-btn")];
+  // const preBtn = [...document.querySelectorAll(".pre-btn")];
+
+  // productContainers.forEach((item, i) => {
+  //   let containerDimensions = item.getBoundingClientRect();
+  //   let containerWidth = containerDimensions.width;
+
+  //   nxtBtn[i].addEventListener("click", () => {
+  //     item.scrollLeft += containerWidth;
+  //   });
+
+  //   preBtn[i].addEventListener("click", () => {
+  //     item.scrollLeft -= containerWidth;
+  //   });
+  // });
+
+
 
   const productContainers = [...document.querySelectorAll(".list")];
   const nextBtn = [...document.querySelectorAll(".nxt-btn")];
