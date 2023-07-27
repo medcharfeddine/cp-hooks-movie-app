@@ -7,7 +7,10 @@ import Search from "../../image/vuesax/linear/vuesax/linear/search-normal.png";
 const Nav = ({ text, handleText, rating, handleRating }) => {
   return (
     <div className="navbar">
+      <Link to="/">
       <img src={Logo} alt="logo" className="logo" />
+      
+      </Link>
       <div className="search">
         <img src={Search} alt="search" className="search-logo" />
         <input

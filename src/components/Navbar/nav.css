@@ -2,12 +2,12 @@
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  z-index: 1;
+    position: sticky;
   /* border: dotted red; */
 }
 
-.nav {
-  /* border: dotted; */
-}
+
 
 .logo {
   width: 60px;

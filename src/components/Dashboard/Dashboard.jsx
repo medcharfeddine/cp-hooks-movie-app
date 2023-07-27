@@ -6,9 +6,11 @@ import Trailer from "../../video/avatarTrailer.mp4";
 const Dashboard = ({ ln }) => {
   return (
     <div className="dashboard">
-      <video autoPlay loop muted>
-        <source src={Trailer} type="video/mp4" />
-      </video>
+      <div className="video-container">
+        <video autoPlay loop muted>
+          <source src={Trailer} type="video/mp4" />
+        </video>
+      </div>
       <div className="Vue">
         <h1 className="welcome">Welcome</h1>
         <br />

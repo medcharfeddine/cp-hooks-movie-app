@@ -38,6 +38,7 @@ const App = () => {
     <div className="App">
       <BrowserRouter>
         <Nav
+        className="main-nav"
           text={text}
           rating={rating}
           handleText={handleText}
@@ -56,3 +57,4 @@ const App = () => {
 };
 
 export default App;
+

@@ -6,19 +6,20 @@ import Latest from "./Latest";
 
 const MovieList = ({ movies }) => {
   // console.log(movies);
+
   const productContainers = [...document.querySelectorAll(".list")];
-  const nxtBtn = [...document.querySelectorAll(".nxt-btn")];
-  const preBtn = [...document.querySelectorAll(".pre-btn")];
+  const nextBtn = [...document.querySelectorAll(".nxt-btn")];
+  const prevBtn = [...document.querySelectorAll(".pre-btn")];
 
   productContainers.forEach((item, i) => {
     let containerDimensions = item.getBoundingClientRect();
     let containerWidth = containerDimensions.width;
 
-    nxtBtn[i].addEventListener("click", () => {
+    nextBtn[i].addEventListener("click", () => {
       item.scrollLeft += containerWidth;
     });
 
-    preBtn[i].addEventListener("click", () => {
+    prevBtn[i].addEventListener("click", () => {
       item.scrollLeft -= containerWidth;
     });
   });
